@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardGameShopMVC", "BoardGameShopMVC\BoardGameShopMVC.csproj", "{709BAFFD-D52E-4789-8D0D-196A6F886401}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoardGameShopMVC.Tests", "BoardGameShopMVC.Tests\BoardGameShopMVC.Tests.csproj", "{BCFBA7E6-91A2-4DD5-B23E-41F48B91EE2D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{709BAFFD-D52E-4789-8D0D-196A6F886401}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{709BAFFD-D52E-4789-8D0D-196A6F886401}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{709BAFFD-D52E-4789-8D0D-196A6F886401}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{709BAFFD-D52E-4789-8D0D-196A6F886401}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCFBA7E6-91A2-4DD5-B23E-41F48B91EE2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCFBA7E6-91A2-4DD5-B23E-41F48B91EE2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCFBA7E6-91A2-4DD5-B23E-41F48B91EE2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCFBA7E6-91A2-4DD5-B23E-41F48B91EE2D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9229DB5F-5BE9-418F-9D66-EDD9ECFF7A56}
+	EndGlobalSection
+EndGlobal
