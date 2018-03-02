@@ -11,6 +11,7 @@ namespace BoardGameShopMVC.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            //changes
             return View();
         }
     }
