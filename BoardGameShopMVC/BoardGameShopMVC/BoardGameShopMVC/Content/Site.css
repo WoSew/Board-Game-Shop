@@ -19,14 +19,8 @@ time, mark, audio, video {
     background: transparent;
 }
 
-body 
-{
+body {
     line-height: 1;
-}
-
-
-input, select, textarea, button {
-    font-family: inherit;
 }
 
 article, aside, details, figcaption, figure,
@@ -34,19 +28,19 @@ footer, header, hgroup, menu, nav, section {
     display: block;
 }
 
-nav ul {
-    list-style: none;
-}
+    nav ul {
+        list-style: none;
+    }
 
 blockquote, q {
     quotes: none;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
-}
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
 
 a {
     margin: 0;
@@ -83,7 +77,6 @@ table {
     border-spacing: 0;
 }
 
-
 hr {
     display: block;
     height: 1px;
@@ -110,7 +103,6 @@ a:hover, a:visited, a:link, a:active {
     color: black;
 }
 
-
 .clearfix:after {
     content: "";
     display: table;
@@ -123,16 +115,7 @@ a:hover, a:visited, a:link, a:active {
     margin-right: auto;
 }
 
-.hidden {
-    display: none;
-}
-
-.invisible {
-    visibility: hidden;
-}
-
-#facebook-header
-{
+#facebook-header {
     width: 260px;
     height: 42px;
     background-color: #39312e;
@@ -145,8 +128,7 @@ a:hover, a:visited, a:link, a:active {
     padding-left: 40px;
 }
 
-#cart-header-link
-{
+#cart-header-link {
     width: 143px;
     height: 42px;
     background-color: #39312E;
@@ -155,50 +137,29 @@ a:hover, a:visited, a:link, a:active {
     line-height: 40px;
     font-size: 14px;
     text-align: center;
-}   
-
-
-#cart-header-link > #cart-header-logo
-{
-    width: 42px;
-    height: 42px;
-    background-color: #585858;
-    float: right;
-    background-image: url(../Content/Images/cart_white.png);
-    background-repeat: no-repeat;
-    background-position: center;
 }
 
+    #cart-header-link > span {
+        width: 42px;
+        height: 42px;
+        background-color: #585858;
+        float: right;
+        background-image: url(../Content/Images/cart_white.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
 
-.clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.center {
+#main-header-logo {
+    margin-top: 25px;
+    margin-bottom: 35px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-.hidden {
-    display: none;
+#baner-main {
+    vertical-align: top;
 }
 
-.invisible {
-    visibility: hidden;
-}
-
-
-a:hover, a:visited, a:link, a:active 
-{
-    text-decoration: none;
-    color: black;
-}
-
-nav.category-horizontal ul
-{
+nav.category-horizontal ul {
     overflow: hidden;
     border-left: 1px solid #E5E5E5;
     border-top: 1px solid #E5E5E5;
@@ -206,8 +167,7 @@ nav.category-horizontal ul
     font-family: 'Segoe UI Semibold', 'Segoe WP', 'Segoe UI';
 }
 
-    nav.category-horizontal ul li
-    {
+    nav.category-horizontal ul li {
         margin: auto;
         float: left;
         width: 332px;
@@ -219,23 +179,109 @@ nav.category-horizontal ul
         line-height: 54px;
     }
 
-    nav.category-horizontal ul li a
-    {
-        width: 100%;
-        display: block;
-        height: 100%;
-        padding-left: 127px;
-        background-repeat: no-repeat;
-        background-position-x: 50px;
-        background-position-y: 50%;
+        nav.category-horizontal ul li a {
+            width: 100%;
+            display: block;
+            height: 100%;
+            padding-left: 127px;
+            background-repeat: no-repeat;
+            background-position-x: 50px;
+            background-position-y: 50%;
+        }
+
+        nav.category-horizontal ul li:hover {
+            -moz-box-shadow: inset 0 0 15px #bbbbbb;
+            -webkit-box-shadow: inset 0 0 15px #bbbbbb;
+            box-shadow: inset 0 0 15px #bbbbbb;
+        }
+
+#productlist-content {
+    overflow: hidden;
+}
+
+#productlist-rightsection {
+    float: left;
+    margin-left: 29px;
+}
+
+#breadcrumb-section {
+    height: 28px;
+}
+
+    #breadcrumb-section a {
+        margin-left: 5px;
+        width: 200px;
+        font-size: 14px;
     }
 
-    nav.category-horizontal ul li:hover
-    {
-        -moz-box-shadow: inset 0 0 15px #bbbbbb;
-        -webkit-box-shadow: inset 0 0 15px #bbbbbb;
-        box-shadow: inset 0 0 15px #bbbbbb;
+nav.category-vertical {
+    width: 202px;
+    font-size: 18px;
+    font-family: 'Segoe UI Semibold', 'Segoe WP', 'Segoe UI';
+    border-right: 1px solid #E5E5E5;
+    float: left;
+}
+
+    nav.category-vertical ul li {
+        height: 50px;
+        line-height: 50px;
     }
+
+        nav.category-vertical ul li:hover {
+            background-color: #EBEBEB;
+        }
+
+        nav.category-vertical ul li a {
+            width: 100%;
+            display: block;
+            height: 100%;
+            padding-left: 75px;
+            background-repeat: no-repeat;
+            background-position-x: 5px;
+            background-position-y: 50%;
+        }
+
+#productlist-section {
+    width: 768px;
+    margin-top: 20px;
+}
+
+ul.large-game-list-bottom li {
+    width: 333.33px;
+    height: 333.33px;
+    font-size: 15px;
+}
+
+    ul.large-game-list-bottom li a h1 {
+        bottom: 0px;
+    }
+
+ul.large-game-list li {
+    width: 333.33px;
+    height: 333.33px;
+}
+
+    ul.large-game-list li a h1 {
+        top: 45%;
+    }
+
+    ul.large-game-list li a:hover h1 {
+        top: 46%;
+    }
+
+ul.small-game-list li {
+    width: 256px;
+    height: 256px;
+}
+
+    ul.small-game-list li a h1 {
+        top: 40%;
+    }
+
+    ul.small-game-list li a:hover h1 {
+        top: 41%;
+    }
+
 ul.ThreeColumnsList {
     overflow: hidden;
     list-style-type: none;
@@ -316,29 +362,6 @@ ul.ThreeColumnsList {
             transition: opacity 1s ease;
         }
 
-ul.large-game-list-bottom li {
-    width: 333.33px;
-    height: 333.33px;
-    font-size: 15px;
-}
-
-    ul.large-game-list-bottom li a h1 {
-        bottom: 0px;
-    }
-
-ul.large-game-list li {
-    width: 333.33px;
-    height: 333.33px;
-}
-
-    ul.large-game-list li a h1 {
-        top: 45%;
-    }
-
-    ul.large-game-list li a:hover h1 {
-        top: 46%;
-    }
-
 div.newFlag {
     background-image: url(Images/new.png);
     background-repeat: no-repeat;
@@ -350,8 +373,7 @@ div.newFlag {
     left: 0;
 }
 
-div.bestsellerFlag
-{
+div.bestsellerFlag {
     background-image: url(Images/bestseller.png);
     background-repeat: no-repeat;
     display: block;
@@ -362,8 +384,112 @@ div.bestsellerFlag
     left: 0;
 }
 
-footer
-{
+.content-section {
+    width: 748px;
+    float: left;
+    margin-top: 30px;
+    padding-left: 20px;
+}
+
+div.section-header {
+    border-bottom: 1px solid #DADADA;
+    margin-bottom: 25px;
+}
+
+    div.section-header h1 {
+        width: 742px;
+        font-size: 18px;
+        font-weight: normal;
+        font-family: 'Segoe WP SemiBold';
+        margin-bottom: 10px;
+        margin-left: 20px;
+    }
+
+#cart-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    #cart-table tr {
+        border-bottom: 1px solid #DADADA;
+    }
+
+        #cart-table tr td {
+            padding-top: 25px;
+            padding-bottom: 25px;
+            vertical-align: middle;
+        }
+
+            #cart-table tr td img {
+                width: 138px;
+                height: 138px;
+            }
+
+            #cart-table tr td:nth-child(1) {
+                width: 138px;
+                height: 138px;
+                vertical-align: middle;
+            }
+
+            #cart-table tr td:nth-child(2) {
+                width: 300px;
+                padding-left: 15px;
+                text-align: left;
+            }
+
+            #cart-table tr td:nth-child(3) {
+                width: 60px;
+                text-align: center;
+            }
+
+            #cart-table tr td:nth-child(4) {
+                width: 160px;
+                text-align: center;
+            }
+
+            #cart-table tr td:nth-child(5) {
+                width: 70px;
+                text-align: center;
+            }
+
+.section-button-container {
+    overflow: hidden;
+}
+
+    .section-button-container :nth-child(1) {
+        float: left;
+    }
+
+    .section-button-container :nth-child(2) {
+        float: right;
+    }
+
+#total-price {
+    width: 100%;
+    text-align: right;
+    margin-top: 25px;
+    margin-bottom: 60px;
+    font-family: 'Segoe UI SemiBold';
+    font-size: 18px;
+}
+
+.button-link {
+    height: 40px;
+    background-color: #595959;
+    color: #dfdfdf;
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 38px;
+    padding: 2px 15px 2px 15px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+a.button-link:visited, a.button-link:link, a.button-link:active {
+    color: #dfdfdf;
+}
+
+footer {
     width: 100%;
     height: 42px;
     background-color: #585858;
@@ -371,57 +497,50 @@ footer
     /*overflow: hidden;*/
 }
 
-footer nav
-{
-    display: table;
-    overflow: hidden;
-    height: 100%;
-    float: left;
-}
+    footer nav {
+        display: table;
+        overflow: hidden;
+        height: 100%;
+        float: left;
+    }
 
-footer nav ul
-{
-    display: table-cell;
-    vertical-align: middle;
-}
+        footer nav ul {
+            display: table-cell;
+            vertical-align: middle;
+        }
 
-footer nav ul li
-{
-    font-size: 14px;
-    color: white;
-    float: left;
-    margin-left: 55px;
-}
+            footer nav ul li {
+                font-size: 14px;
+                color: white;
+                float: left;
+                margin-left: 55px;
+            }
 
-footer nav ul li a, footer nav ul li a:hover, footer nav ul li a:visited, footer nav ul li a:active, footer nav ul li a:link {
-    color: white;
-}
+                footer nav ul li a, footer nav ul li a:hover, footer nav ul li a:visited, footer nav ul li a:active, footer nav ul li a:link {
+                    color: white;
+                }
 
-footer nav ul li a:hover
-{
-    text-decoration: underline;
-    color: white;
-}
+                    footer nav ul li a:hover {
+                        text-decoration: underline;
+                        color: white;
+                    }
 
-footer nav ul li a:visited
-{
-    color: white;
-}
+                    footer nav ul li a:visited {
+                        color: white;
+                    }
 
-footer #footer-logo
-{
-    float: right;
-    margin-top: 3px;
-    margin-right: 3px;
-}
+    footer #footer-logo {
+        float: right;
+        margin-top: 3px;
+        margin-right: 3px;
+    }
 
-footer #footer-copyright
-{
-    width: 250px;
-    float: right;
-    line-height: 42px;
-    height: 100%;
-    font-size: 14px;
-    color: white;
-    padding-left: 15px;
-}
+    footer #footer-copyright {
+        width: 250px;
+        float: right;
+        line-height: 42px;
+        height: 100%;
+        font-size: 14px;
+        color: white;
+        padding-left: 15px;
+    }

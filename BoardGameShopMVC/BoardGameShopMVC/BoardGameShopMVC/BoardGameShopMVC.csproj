@@ -134,6 +134,7 @@
     <Content Include="Content\Images\upload.png" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Prototype\Cart.html" />
     <Content Include="Prototype\Main.html" />
     <Content Include="Web.config" />
   </ItemGroup>
