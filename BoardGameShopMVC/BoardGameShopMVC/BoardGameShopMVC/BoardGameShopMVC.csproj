@@ -89,7 +89,52 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\category-icons\adventure.png" />
+    <Content Include="Content\category-icons\cardGame.png" />
+    <Content Include="Content\category-icons\cooperative.png" />
+    <Content Include="Content\category-icons\economic.png" />
+    <Content Include="Content\category-icons\educational.png" />
+    <Content Include="Content\category-icons\horror.png" />
+    <Content Include="Content\category-icons\logic.png" />
+    <Content Include="Content\category-icons\other.png" />
+    <Content Include="Content\category-icons\partyGame.png" />
+    <Content Include="Content\category-icons\promos.png" />
+    <Content Include="Content\category-icons\strategy.png" />
+    <Content Include="Content\category-icons\wargame.png" />
+    <Content Include="Content\games\7wonders.png" />
+    <Content Include="Content\games\bloodRage.png" />
+    <Content Include="Content\games\dixit.png" />
+    <Content Include="Content\games\eldritchHorror.png" />
+    <Content Include="Content\games\fiveTribes.png" />
+    <Content Include="Content\games\mansionsOfMadness.png" />
+    <Content Include="Content\games\patchwork.png" />
+    <Content Include="Content\games\smallworld.png" />
+    <Content Include="Content\games\summonerWars.png" />
+    <Content Include="Content\Images\ajax-loader.gif" />
+    <Content Include="Content\Images\ajax-loader.png" />
+    <Content Include="Content\Images\baner-main.png" />
+    <Content Include="Content\Images\bestseller.png" />
+    <Content Include="Content\Images\cart-details.png" />
+    <Content Include="Content\Images\cart.png" />
+    <Content Include="Content\Images\cart_white.png" />
+    <Content Include="Content\Images\fb-login.png" />
+    <Content Include="Content\Images\fb-share.png" />
+    <Content Include="Content\Images\fb_white.png" />
+    <Content Include="Content\Images\footer-cd.png" />
+    <Content Include="Content\Images\footer-dice.png" />
+    <Content Include="Content\Images\google-login.png" />
+    <Content Include="Content\Images\home-small.png" />
+    <Content Include="Content\Images\icons-18-black.png" />
+    <Content Include="Content\Images\icons-36-black.png" />
+    <Content Include="Content\Images\icons-36-white.png" />
+    <Content Include="Content\Images\logo-main.png" />
+    <Content Include="Content\Images\new.png" />
+    <Content Include="Content\Images\searchlogo.png" />
+    <Content Include="Content\Images\twitter-share.png" />
+    <Content Include="Content\Images\upload.png" />
+    <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Prototype\Main.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
