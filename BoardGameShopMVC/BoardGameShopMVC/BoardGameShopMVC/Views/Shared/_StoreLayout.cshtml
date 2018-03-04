@@ -1,0 +1,58 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" />
+
+</head>
+<body>
+    <header>
+        <div style="overflow: hidden;">
+            <a id="facebook-header" href="">
+                DOŁACZ DO 500 FANÓW NA FB
+            </a>
+
+            <a id="cart-header-link" href="">
+                KOSZYK (0)
+                <span></span>
+            </a>
+        </div>
+        <a id="main-logo" href="">
+            <img src="../../Content/Images/logo-main.png" class="center" />
+        </a>
+    </header>
+
+    <div>
+        @RenderBody()   <!--to add content for currenty html view-->
+    </div>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="">"O nas"</a></li>
+                <li><a href="">"Kontakt"</a></li>
+                <li><a href="">"Wysyłka"</a></li>
+                <li><a href="">"Regulamin"</a></li>
+            </ul>
+        </nav>
+        <div id="footer-logo">
+            <img src="@Url.Content("~/Content/Images/footer-dice.png")" />
+        </div>
+
+        <div id="footer-copyright">
+            Copyright &copy; 2018 BoardGameShop
+        </div>
+    </footer>
+    
+    @RenderSection("ScriptsBottom", required: false)  <!--to add js scripts-->
+
+</body>
+</html>

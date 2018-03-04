@@ -16,5 +16,11 @@ namespace BoardGameShopMVC.Controllers
 
             //login...
         }
+
+        //test
+        public ActionResult Index2()
+        {
+            return View();
+        }
     }
 }
