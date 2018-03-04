@@ -25,7 +25,7 @@
                 <span></span>
             </a>
         </div>
-        <a id="main-logo" href="">
+        <a id="main-logo" href="@Url.Content("~/")">
             <img src="../../Content/Images/logo-main.png" class="center" />
         </a>
     </header>
@@ -37,10 +37,18 @@
     <footer>
         <nav>
             <ul>
-                <li><a href="">"O nas"</a></li>
-                <li><a href="">"Kontakt"</a></li>
-                <li><a href="">"Wysyłka"</a></li>
-                <li><a href="">"Regulamin"</a></li>
+                <li>
+                    <a href="@Url.Action("StaticContent", "Home", new {viewname = "AboutUs"})">O nas</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("StaticContent", "Home", new {viewname = "Contact"})">Kontakt</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("StaticContent", "Home", new {viewname = "Shipment"})">Wysyłka</a>
+                </li>
+                <li>
+                    <a href="@Url.Action("StaticContent", "Home", new {viewname = "Regulations"})">Regulamin</a>
+                </li>
             </ul>
         </nav>
         <div id="footer-logo">
