@@ -16,7 +16,7 @@ namespace BoardGameShopMVC.Models
         public bool IsBestseller { get; set; }
         public bool IsHidder { get; set; }
 
-        public virtual Category Categry { get; set; } //navigation property in EF
+        public virtual Category Category { get; set; } //navigation property in EF
     
     }
 }

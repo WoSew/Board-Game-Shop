@@ -6,7 +6,7 @@ namespace BoardGameShopMVC.Models
 {
     public class Order
     {
-        public int OderdId { get; set; }
+        public int OrderId { get; set; }
         
         [StringLength(150)]
         public string FirstName { get; set; }
