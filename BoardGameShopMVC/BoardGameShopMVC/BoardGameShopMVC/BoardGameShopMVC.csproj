@@ -173,6 +173,10 @@
     <Compile Include="Migrations\201803062100067_AddedMigrationTest.Designer.cs">
       <DependentUpon>201803062100067_AddedMigrationTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803062133297_RemovedMigrationTest.cs" />
+    <Compile Include="Migrations\201803062133297_RemovedMigrationTest.Designer.cs">
+      <DependentUpon>201803062133297_RemovedMigrationTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Game.cs" />
@@ -207,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803062100067_AddedMigrationTest.resx">
       <DependentUpon>201803062100067_AddedMigrationTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803062133297_RemovedMigrationTest.resx">
+      <DependentUpon>201803062133297_RemovedMigrationTest.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

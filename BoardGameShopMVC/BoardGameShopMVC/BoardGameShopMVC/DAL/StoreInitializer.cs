@@ -1,20 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
+using BoardGameShopMVC.Migrations;
 using BoardGameShopMVC.Models;
 
 namespace BoardGameShopMVC.DAL
 {
-    public class StoreInitializer : DropCreateDatabaseAlways<StoreContext>
+    public class StoreInitializer : MigrateDatabaseToLatestVersion<StoreContext, Configuration>
     {
-        protected override void Seed(StoreContext context)
-        {
-            SeedStoreData(context);
+        //protected override void Seed(StoreContext context)
+        //{
+        //    SeedStoreData(context);
 
-            base.Seed(context);
-        }
+        //    base.Seed(context);
+        //}
 
-        private void SeedStoreData(StoreContext context)
+        public static void SeedStoreData(StoreContext context)
         {
             var category = new List<Category>
             {
@@ -32,7 +34,7 @@ namespace BoardGameShopMVC.DAL
                 new Category() {CategoryId = 12, Name = "Promocje", IconFileName = "promos.png"},
             };
             
-            category.ForEach(x => context.Categories.Add(x));
+            category.ForEach(x => context.Categories.AddOrUpdate(x));
             context.SaveChanges();
 
             var games = new List<Game>
@@ -48,7 +50,7 @@ namespace BoardGameShopMVC.DAL
                 new Game() { GameID = 9, DesignerName = "Colby Dauch", GameTitle = "Summoner Wars", Price = 159.99M , GameFileName = "summonerWars.png", IsBestseller = false, DateAdded = new DateTime(2018, 03, 05), CategoryId = 5}
             };
 
-            games.ForEach(x => context.Games.Add(x));
+            games.ForEach(x => context.Games.AddOrUpdate(x));
             context.SaveChanges();
         }
     }
