@@ -5,7 +5,7 @@ using BoardGameShopMVC.Models;
 
 namespace BoardGameShopMVC.DAL
 {
-    public class StoreInitializer : DropCreateDatabaseIfModelChanges<StoreContext>
+    public class StoreInitializer : DropCreateDatabaseAlways<StoreContext>
     {
         protected override void Seed(StoreContext context)
         {
@@ -49,6 +49,7 @@ namespace BoardGameShopMVC.DAL
             };
 
             games.ForEach(x => context.Games.Add(x));
+            context.SaveChanges();
         }
     }
 }
