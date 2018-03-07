@@ -1,86 +1,37 @@
-﻿
+﻿@model BoardGameShopMVC.ViewModels.HomeViewModel
+@using BoardGameShopMVC.Infrastructure
 @{
     ViewBag.Title = "BoardGameShop!";
 }
 
 <nav class="category-horizontal">
     <ul>
-        <li>
-            <a href="" style="background-image: url(../../Content/category-icons/educational.png);">
-                Edukacyjne
-            </a>
-        </li>     
-        <li>
-            <a href="" style="background-image: url(../../Content/category-icons/economic.png);">
-                Ekonomiczne
-            </a>
-        </li>       
-        <li>
-            <a href="" style="background-image: url(../../Content/category-icons/horror.png);">
-                Horror
-            </a>
-        </li>        
-        <li>
-            <a href="" style="background-image: url(../../Content/category-icons/partyGame.png);">
-                Imprezowe
-            </a>
-        </li>
-        <li>
-            <a href="" style="background-image: url(../../Content/category-icons/cardGame.png);">
-                Karciane
-            </a>
-        </li>
-        <li>
-            <a href="" style="background-image: url(../../Content/category-icons/cooperative.png);">
-                Kooperacyjne
-            </a>
-        </li>
-        <li>
-            <a href="" style="background-image: url(../../Content/category-icons/logic.png);">
-                Logiczne
-            </a>
-        </li>
-        <li>
-            <a href="" style="background-image: url(../../Content/category-icons/adventure.png);">
-                Przygodowe
-            </a>
-        </li>
-        <li>
-            <a href="" style="background-image: url(../../Content/category-icons/strategy.png);">
-                Strategiczne
-            </a>
-        </li>
-        <li>
-            <a href="" style="background-image: url(../../Content/category-icons/wargame.png);">
-                Wojenne
-            </a>
-        </li>
-        <li>
-            <a href="" style="background-image: url(../../Content/category-icons/other.png);">
-                Inne
-            </a>
-        </li>
-        <li>
-            <a href="" style="background-image: url(../../Content/category-icons/promos.png);">
-                Promocje
-            </a>
-        </li>
+
+        @foreach (var category in Model.Categories)
+        {
+            <li>
+                <a href="@Url.Action("List", "Store", new { genrename = category.Name.ToLower() })" style="background-image: url(@Url.CategoryIconPath(category.IconFileName));">
+                    @category.Name
+                </a>
+            </li>
+        }
+
     </ul>
     <a href="">
-        <img id="baner-main" src="../../Content/Images/baner-main.png"/>
+        <img id="baner-main" src="../../Content/Images/baner-main.png" />
     </a>
 </nav>
- 
-<section> 
+
+<section>
     <ul class="ThreeColumnsList large-game-list">
         <li>
             <article>
                 <a class="addToCartLink" href="../../Prototype/aaaa">
-                    <img src="../../Content/Images/cart.png"/>
+                    <img src="../../Content/Images/cart.png" />
                 </a>
                 <a class="productDetailsLink" href="../../Prototype/asd">
                     <div class="newFlag"></div>
-                    <img class ="game" src="../../Content/games/7wonders.png" />
+                    <img class="game" src="../../Content/games/7wonders.png" />
                     <h1>
                         Testowy obrazek
                     </h1>
@@ -90,11 +41,11 @@
         <li>
             <article>
                 <a class="addToCartLink" href="../../Prototype/aaaa">
-                    <img src="../../Content/Images/cart.png"/>
+                    <img src="../../Content/Images/cart.png" />
                 </a>
                 <a class="productDetailsLink" href="../../Prototype/asd">
                     <div class="newFlag"></div>
-                    <img class ="game" src="../../Content/games/fiveTribes.png" />
+                    <img class="game" src="../../Content/games/fiveTribes.png" />
                     <h1>
                         Testowy obrazek
                     </h1>
@@ -104,11 +55,11 @@
         <li>
             <article>
                 <a class="addToCartLink" href="../../Prototype/aaaa">
-                    <img src="../../Content/Images/cart.png"/>
+                    <img src="../../Content/Images/cart.png" />
                 </a>
                 <a class="productDetailsLink" href="../../Prototype/asd">
                     <div class="newFlag"></div>
-                    <img class ="game" src="../../Content/games/mansionsOfMadness.png" />
+                    <img class="game" src="../../Content/games/mansionsOfMadness.png" />
                     <h1>
                         Testowy obrazek
                     </h1>
@@ -117,7 +68,7 @@
         </li>
     </ul>
 </section>
-    
+
 <section>
     <ul class="ThreeColumnsList large-game-list">
         <li>
@@ -127,7 +78,7 @@
                 </a>
                 <a class="productDetailsLink" href="../../Prototype/asd">
                     <div class="bestsellerFlag"></div>
-                    <img class="game" src="../../Content/games/bloodRage.png"/>
+                    <img class="game" src="../../Content/games/bloodRage.png" />
                     <h1>
                         Testowy obrazek
                     </h1>
@@ -141,7 +92,7 @@
                 </a>
                 <a class="productDetailsLink" href="../../Prototype/asd">
                     <div class="bestsellerFlag"></div>
-                    <img class="game" src="../../Content/games/eldritchHorror.png"/>
+                    <img class="game" src="../../Content/games/eldritchHorror.png" />
                     <h1>
                         Testowy obrazek
                     </h1>
@@ -155,7 +106,7 @@
                 </a>
                 <a class="productDetailsLink" href="../../Prototype/asd">
                     <div class="bestsellerFlag"></div>
-                    <img class="game" src="../../Content/games/smallworld.png"/>
+                    <img class="game" src="../../Content/games/smallworld.png" />
                     <h1>
                         Testowy obrazek
                     </h1>
@@ -164,4 +115,4 @@
         </li>
     </ul>
 </section>
-    
+

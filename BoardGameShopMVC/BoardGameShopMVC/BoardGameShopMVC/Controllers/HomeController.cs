@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using BoardGameShopMVC.DAL;
 using BoardGameShopMVC.Models;
+using BoardGameShopMVC.ViewModels;
 
 namespace BoardGameShopMVC.Controllers
 {
@@ -15,19 +16,19 @@ namespace BoardGameShopMVC.Controllers
         // GET: Home
         public ActionResult Index()
         {
-/*            Category newCategory = new Category
+            var categories = db.Categories.ToList();
+
+            var newArriwals = db.Games.Where(x => !x.IsHidder).OrderByDescending(x => x.DateAdded).Take(3).ToList();
+
+            var bestsellers = db.Games.Where(x => !x.IsHidder && x.IsBestseller).OrderBy(y => Guid.NewGuid()).Take(3).ToList(); // order by new Guid to get random bestseller in each time
+
+            var vm = new HomeViewModel()
             {
-                Name = "Horror",
-                Description = "Opis kategorii",
-                IconFileName = "Horror.png"
+                Bestsellers = bestsellers,
+                NewArrivals = newArriwals,
+                Categories = categories
             };
-
-            db.Categories.Add(newCategory);
-            db.SaveChanges();*/
-
-            var categoryList = db.Categories.ToList();
-
-            return View();
+            return View(vm);
         }
 
         public ActionResult StaticContent(string viewname)
