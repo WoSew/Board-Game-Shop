@@ -116,7 +116,7 @@
     <Content Include="Content\category-icons\promos.png" />
     <Content Include="Content\category-icons\strategy.png" />
     <Content Include="Content\category-icons\wargame.png" />
-    <Content Include="Content\games\7wonders.png" />
+    <Content Include="Content\games\7wonder.png" />
     <Content Include="Content\games\bloodRage.png" />
     <Content Include="Content\games\dixit.png" />
     <Content Include="Content\games\eldritchHorror.png" />

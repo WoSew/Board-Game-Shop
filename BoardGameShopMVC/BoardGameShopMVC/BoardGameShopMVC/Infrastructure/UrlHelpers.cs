@@ -15,7 +15,7 @@ namespace BoardGameShopMVC.Infrastructure
 
         public static string GamePhotoPath(this UrlHelper helper, string photoFilename)
         {
-            var gamePhotoPath = AppConfig.CategoryIconFolderRelative;
+            var gamePhotoPath = AppConfig.PhotosFolderRelative;
             var path = Path.Combine(gamePhotoPath, photoFilename);
             var absolutePath = helper.Content(path);
             return absolutePath;

@@ -10,7 +10,7 @@
         @foreach (var category in Model.Categories)
         {
             <li>
-                <a href="@Url.Action("List", "Store", new { genrename = category.Name.ToLower() })" style="background-image: url(@Url.CategoryIconPath(category.IconFileName));">
+                <a href="@Url.Action("List", "Store", new { categoryename = category.Name.ToLower() })" style="background-image: url(@Url.CategoryIconPath(category.IconFileName));">
                     @category.Name
                 </a>
             </li>
@@ -24,95 +24,46 @@
 
 <section>
     <ul class="ThreeColumnsList large-game-list">
-        <li>
-            <article>
-                <a class="addToCartLink" href="../../Prototype/aaaa">
-                    <img src="../../Content/Images/cart.png" />
-                </a>
-                <a class="productDetailsLink" href="../../Prototype/asd">
-                    <div class="newFlag"></div>
-                    <img class="game" src="../../Content/games/7wonders.png" />
-                    <h1>
-                        Testowy obrazek
-                    </h1>
-                </a>
-            </article>
-        </li>
-        <li>
-            <article>
-                <a class="addToCartLink" href="../../Prototype/aaaa">
-                    <img src="../../Content/Images/cart.png" />
-                </a>
-                <a class="productDetailsLink" href="../../Prototype/asd">
-                    <div class="newFlag"></div>
-                    <img class="game" src="../../Content/games/fiveTribes.png" />
-                    <h1>
-                        Testowy obrazek
-                    </h1>
-                </a>
-            </article>
-        </li>
-        <li>
-            <article>
-                <a class="addToCartLink" href="../../Prototype/aaaa">
-                    <img src="../../Content/Images/cart.png" />
-                </a>
-                <a class="productDetailsLink" href="../../Prototype/asd">
-                    <div class="newFlag"></div>
-                    <img class="game" src="../../Content/games/mansionsOfMadness.png" />
-                    <h1>
-                        Testowy obrazek
-                    </h1>
-                </a>
-            </article>
-        </li>
+        @foreach (var newGame in Model.NewArrivals)
+        {
+            <li>
+                <article>
+                    <a class="addToCartLink" href="">
+                        <img src="../../Content/Images/cart.png" />
+                    </a>
+                    <a class="productDetailsLink" href="@Url.Action("Details", "Store", new { id = newGame.GameID})">
+                        <div class="newFlag"></div>
+                        <img class="game" src="@Url.GamePhotoPath(newGame.GameFileName)" />
+                        <h1>
+                            @newGame.GameTitle
+                        </h1>
+                    </a>
+                </article>
+            </li>
+        }
     </ul>
 </section>
 
 <section>
     <ul class="ThreeColumnsList large-game-list">
-        <li>
-            <article>
-                <a class="addToCartLink" href="../../Prototype/aaaa">
-                    <img src="../../Content/Images/cart.png" />
-                </a>
-                <a class="productDetailsLink" href="../../Prototype/asd">
-                    <div class="bestsellerFlag"></div>
-                    <img class="game" src="../../Content/games/bloodRage.png" />
-                    <h1>
-                        Testowy obrazek
-                    </h1>
-                </a>
-            </article>
-        </li>
-        <li>
-            <article>
-                <a class="addToCartLink" href="../../Prototype/aaaa">
-                    <img src="../../Content/Images/cart.png" />
-                </a>
-                <a class="productDetailsLink" href="../../Prototype/asd">
-                    <div class="bestsellerFlag"></div>
-                    <img class="game" src="../../Content/games/eldritchHorror.png" />
-                    <h1>
-                        Testowy obrazek
-                    </h1>
-                </a>
-            </article>
-        </li>
-        <li>
-            <article>
-                <a class="addToCartLink" href="../../Prototype/aaaa">
-                    <img src="../../Content/Images/cart.png" />
-                </a>
-                <a class="productDetailsLink" href="../../Prototype/asd">
-                    <div class="bestsellerFlag"></div>
-                    <img class="game" src="../../Content/games/smallworld.png" />
-                    <h1>
-                        Testowy obrazek
-                    </h1>
-                </a>
-            </article>
-        </li>
+        
+        @foreach (var bestsellerGame in Model.Bestsellers)
+        {
+            <li>
+                <article>
+                    <a class="addToCartLink" href="../../Prototype/aaaa">
+                        <img src="../../Content/Images/cart.png" />
+                    </a>
+                    <a class="productDetailsLink" href="@Url.Action("Details", "Store", new {id = bestsellerGame.GameID})">
+                        <div class="bestsellerFlag"></div>
+                        <img class="game" src="@Url.GamePhotoPath(bestsellerGame.GameFileName)" />
+                        <h1>
+                            @bestsellerGame.GameTitle
+                        </h1>
+                    </a>
+                </article>
+            </li>
+        }
     </ul>
 </section>
 
