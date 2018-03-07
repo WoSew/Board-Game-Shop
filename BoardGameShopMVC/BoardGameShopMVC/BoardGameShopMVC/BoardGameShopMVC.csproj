@@ -153,7 +153,9 @@
     <Content Include="Prototype\OrdersList.html" />
     <Content Include="Prototype\ProductDetails.html" />
     <Content Include="Prototype\ProductList.html" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
