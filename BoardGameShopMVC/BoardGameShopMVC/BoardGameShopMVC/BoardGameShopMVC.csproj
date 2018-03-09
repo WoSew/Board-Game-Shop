@@ -44,6 +44,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.3.1.7705, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -72,6 +75,9 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -79,6 +85,9 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Web.Razor">
@@ -116,7 +125,7 @@
     <Content Include="Content\category-icons\promos.png" />
     <Content Include="Content\category-icons\strategy.png" />
     <Content Include="Content\category-icons\wargame.png" />
-    <Content Include="Content\games\7wonder.png" />
+    <Content Include="Content\games\7wonders.png" />
     <Content Include="Content\games\bloodRage.png" />
     <Content Include="Content\games\dixit.png" />
     <Content Include="Content\games\eldritchHorror.png" />
@@ -139,6 +148,7 @@
     <Content Include="Content\Images\google-login.png" />
     <Content Include="Content\Images\home-small.png" />
     <Content Include="Content\Images\icons-18-black.png" />
+    <Content Include="Content\Images\icons-18-white.png" />
     <Content Include="Content\Images\icons-36-black.png" />
     <Content Include="Content\Images\icons-36-white.png" />
     <Content Include="Content\Images\logo-main.png" />
@@ -146,21 +156,35 @@
     <Content Include="Content\Images\searchlogo.png" />
     <Content Include="Content\Images\twitter-share.png" />
     <Content Include="Content\Images\upload.png" />
+    <Content Include="Content\jquery.mobile-1.1.0.css" />
+    <Content Include="Content\jquery.mobile-1.1.0.min.css" />
+    <Content Include="Content\jquery.mobile.structure-1.1.0.css" />
+    <Content Include="Content\jquery.mobile.structure-1.1.0.min.css" />
+    <Content Include="Content\jquery.mobile.theme-1.1.0.css" />
+    <Content Include="Content\jquery.mobile.theme-1.1.0.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\Site.Mobile.css" />
     <Content Include="Global.asax" />
     <Content Include="Prototype\Cart.html" />
     <Content Include="Prototype\Main.html" />
     <Content Include="Prototype\OrdersList.html" />
     <Content Include="Prototype\ProductDetails.html" />
     <Content Include="Prototype\ProductList.html" />
+    <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.6.4.js" />
+    <Content Include="Scripts\jquery-1.6.4.min.js" />
+    <Content Include="Scripts\jquery.mobile-1.1.0.js" />
+    <Content Include="Scripts\jquery.mobile-1.1.0.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BundleMobileConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
+    <Compile Include="Controllers\ViewSwitcherController.cs" />
     <Compile Include="DAL\StoreContext.cs" />
     <Compile Include="DAL\StoreInitializer.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
@@ -200,6 +224,9 @@
     <Content Include="Views\Home\Regulamin.cshtml" />
     <Content Include="Views\Home\Wysylka.cshtml" />
     <Content Include="Views\Store\List.cshtml" />
+    <Content Include="Views\Home\Index.mobile.cshtml" />
+    <Content Include="Views\Shared\_ViewSwitcher.cshtml" />
+    <Content Include="Views\Shared\_Layout.Mobile.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

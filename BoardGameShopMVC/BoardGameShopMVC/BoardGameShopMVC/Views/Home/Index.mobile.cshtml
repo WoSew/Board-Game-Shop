@@ -1,0 +1,75 @@
+﻿@model BoardGameShopMVC.ViewModels.HomeViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Indexmobile</title>
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+<body>
+    @Html.Partial("_ViewSwitcher")
+    <h3 class="ui-bar ui-bar-a">Witamy w BoardGameShop</h3>
+    <div class="ui-body">
+
+        <ul data-role="listview" data-inset="true" data-driver-theme="a">
+
+            <li data-role="list-divider">Nowości</li>
+
+            @foreach (var newGame in Model.NewArrivals)
+            {
+                <li>
+                    <a href="@Url.Action("Details", "Store", new { id = newGame.GameID})" data-ajax="false">
+                        <img src="@Url.Content("~/Content/games/" + newGame.GameFileName)">
+                        <h2>@newGame.GameTitle</h2>
+                    </a>
+                </li>
+            }
+
+            <li data-role="list-divider">Bestsellery</li>
+
+            @foreach (var bestseller in Model.Bestsellers)
+            {
+                <li>
+                    <a href="@Url.Action("Details", "Store", new { id = bestseller.GameID})" data-ajax="false">
+                        <img src="@Url.Content("~/Content/games/" + bestseller.GameFileName)">
+                        <h2>@bestseller.GameTitle</h2>
+                    </a>
+                </li>
+            }
+        </ul>
+        <br />
+        <ul data-role="listview" data-filter="true" data-filter-placeholder="Wyszukaj kategorię gry..." data-inset="true">
+
+            @foreach (var category in Model.Categories)
+            {
+                <li>
+                    <a href="@Url.Action("List", "Store", new { categoryName = category.Name.ToLower()})" data-ajax="false">@category.Name</a>
+                </li>
+            }
+        </ul>
+        <br />
+
+        <div data-role="footer">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="https://www.wojciechseweryn.pl/" data-ajax="false" data-icon="heart">Facebook</a></li>
+                    <li><a href="@Url.Action("StaticContent", "Home", new { viewname = "Onas" })" data-ajax="false" data-icon="info">O nas</a></li>
+                    <li><a href="@Url.Action("StaticContent", "Home", new { viewname = "Kontakt" })" data-ajax="false" data-icon="mail">Kontakt</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
