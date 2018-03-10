@@ -19,7 +19,9 @@ namespace BoardGameShopMVC.Controllers
 
         public ActionResult Details(int id)
         {
-            return View(); 
+            var game = db.Games.Find(id);
+
+            return View(game); 
         }
 
         public ActionResult List(string categoryName)

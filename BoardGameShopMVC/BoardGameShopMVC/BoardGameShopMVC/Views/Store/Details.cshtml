@@ -1,0 +1,65 @@
+﻿@model BoardGameShopMVC.Models.Game
+@using BoardGameShopMVC.Infrastructure
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_StoreLayout.cshtml";
+}
+
+<div id="productlist-content">
+
+    @Html.Action("CategoriesMenu")
+
+    <div id="productlist-rightsection">
+        <div id="breadcrumb-section">
+            <img src="../Content/Images/home-small.png" />
+            <a href="nav">
+                Start > Edukacyjne
+            </a>
+        </div>
+         
+        <section id="product-details-section">
+            <div id="product-details-left">
+
+                <img src="@Url.GamePhotoPath(Model.GameFileName)" />
+
+                <div id="product-details-share">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=@Request.Url.AbsoluteUri" target="_blank"></a>
+                    <div></div>
+                    <a href="http://twitter.com/share?text= Moja nowa zdobycz: @Request.Url.AbsoluteUri" target="_blank"></a>
+                </div>
+
+            </div>
+
+            <div id="product-details-right">
+                <div id="product-details-names">
+
+                    <h1>
+                        @Model.GameTitle
+                    </h1>
+
+                    <h2>
+                        @Model.DesignerName
+                    </h2>
+
+                </div>
+
+                <div id="product-details-price">
+                    <div>
+                        @String.Format("{0:0.##}", Model.Price)<span>PLN</span>
+                    </div>
+                    <a href="@Url.Action("AddToCart", "Cart", new {id = Model.GameID})"></a>
+                </div>
+
+                <div id="product-details-description">
+                        @Model.Description
+                </div>
+
+                <div id="product-details-info">
+                    Czas realizacji zamówienia: 24 godziny.
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+</div>
