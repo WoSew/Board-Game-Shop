@@ -1,0 +1,17 @@
+﻿@model IEnumerable<BoardGameShopMVC.Models.Category>
+@using BoardGameShopMVC.Infrastructure
+
+<nav class="category-vertical">
+    <ul>
+        @foreach (var category in Model)
+        {
+            <li>
+                <a href="@Url.Action("List", "Store", new {categoryName = category.Name.ToString()})" 
+                   
+                   style="background-image: url(@Url.CategoryIconPath(category.IconFileName));">
+                   @category.Name
+                </a>
+            </li>
+        }
+    </ul>
+</nav>

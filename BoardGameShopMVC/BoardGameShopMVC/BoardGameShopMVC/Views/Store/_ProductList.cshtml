@@ -1,0 +1,27 @@
+﻿@model IEnumerable<BoardGameShopMVC.Models.Game>
+@using BoardGameShopMVC.Infrastructure   
+    
+<div id="productlist-section">
+    <ul class="ThreeColumnsList small-game-list">
+        @foreach (var game in Model)
+        {
+            <li>
+                <article>
+                    <a class="addToCartLink" href="@Url.Action("AddToCart", "Cart", new { id = game.GameID})">
+                        <img src="@Url.Content("~/Content/Images/cart.png")" alt="Dodaj do koszyka" />
+                    </a>
+                    @if (game.IsBestseller)
+                    {
+                        <div class="bestsellerFlag"></div>
+                    }
+                    <a class="productDetailsLink" href="@Url.Action("Details", "Store", new { id = game.GameID})">
+                        <img class="game" src="@Url.GamePhotoPath(game.GameFileName)"/>
+                        <h1>
+                            @game.GameTitle
+                        </h1>
+                    </a>
+                </article>
+            </li>    
+        }
+     </ul>
+</div>

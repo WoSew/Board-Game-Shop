@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BoardGameShopMVC.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,8 @@ namespace BoardGameShopMVC.Controllers
 {
     public class StoreController : Controller
     {
+        StoreContext db = new StoreContext();
+
         // GET: Store
         public ActionResult Index()
         {
@@ -19,9 +22,22 @@ namespace BoardGameShopMVC.Controllers
             return View(); 
         }
 
-        public ActionResult List(string category)
+        public ActionResult List(string categoryName)
         {
-            return View();
+            var category = db.Categories.Include("Games").Where(x => x.Name.ToUpper() == categoryName.ToUpper())
+                .Single();
+            var games = category.Games.ToList();
+
+            return View(games);
+        }
+
+        //akcja na potrzeby wewnetrzne (do List)
+        [ChildActionOnly]
+        public ActionResult CategoriesMenu()
+        {
+            var categories = db.Categories.ToList();
+
+            return PartialView("_CategoriesMenu",categories);
         }
     }
 }

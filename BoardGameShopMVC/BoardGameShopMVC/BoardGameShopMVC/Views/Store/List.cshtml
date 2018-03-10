@@ -1,8 +1,20 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "List";
     Layout = "~/Views/Shared/_StoreLayout.cshtml";
 }
 
 <h2>List</h2>
 
+
+<div id="productlist-content">
+
+    @Html.Action("CategoriesMenu")
+
+    <div id="productlist-rightsection">
+        <div id="breadcrumb-section">
+            <img src="@Url.Content("~/Content/Images/home-small.png")" />
+        </div>
+
+        @Html.Partial("_ProductList")
+    </div>
+</div>
