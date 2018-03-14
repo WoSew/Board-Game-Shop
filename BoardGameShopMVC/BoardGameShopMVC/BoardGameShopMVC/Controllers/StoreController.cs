@@ -40,7 +40,15 @@ namespace BoardGameShopMVC.Controllers
         {
             var categories = db.Categories.ToList();
 
-            return PartialView("_CategoriesMenu",categories);
+            return PartialView("CategoriesMenu",categories);
+        }
+
+        public ActionResult GamesSuggestions(string term)
+        {
+            var games = this.db.Games.Where(x => !x.IsHidder && x.GameTitle.ToLower().Contains(term.ToLower())).Take(5)
+                .Select(x => new { label = x.GameTitle});
+
+            return Json(games, JsonRequestBehavior.AllowGet);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿@{
+﻿@using System.Web.Optimization
+@{
     ViewBag.Title = "List";
     Layout = "~/Views/Shared/_StoreLayout.cshtml";
 }
@@ -11,8 +12,45 @@
         <div id="breadcrumb-section">
             <img src="@Url.Content("~/Content/Images/home-small.png")" />
             @Html.MvcSiteMap().SiteMapPath()
+
+            <form id="search-form">
+                <input id="search-filter" type="search" name="searchQuery"
+                       data-autocomplete-source="@Url.Action("GamesSuggestions")"
+                       placeholder="Filtruj..." />
+                <input type="submit" value="" />
+            </form>
         </div>
 
         @Html.Partial("_ProductList")
+
     </div>
 </div>
+
+@section ScriptsBottom {
+
+    @Scripts.Render("~/bundles/jquery")
+
+    <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+    <script>
+        $(function () {
+
+            var setupAutoComplete = function () {
+                var $input = $(this);
+
+                var options =
+                    {
+                        source: $input.attr("data-autocomplete-source"),
+                        select: function (event, ui) {
+                            $input = $(this);
+                            $input.val(ui.item.label);
+                            var $form = $input.parents("form:first");
+                            $form.submit();
+                        }
+                    };
+                $input.autocomplete(options);
+            }
+            $("#search-filter").each(setupAutoComplete);
+        });
+    </script>
+}

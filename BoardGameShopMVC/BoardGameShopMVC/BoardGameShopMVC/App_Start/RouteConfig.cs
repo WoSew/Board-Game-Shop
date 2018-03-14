@@ -28,9 +28,9 @@ namespace BoardGameShopMVC
 
             routes.MapRoute(
                 name: "ProductList",
-                url: "kategorie/{category}",
+                url: "kategorie/{categoryName}",
                 defaults: new {controller = "Store", action = "List"},
-                constraints: new { category = @"[\w]+"}
+                constraints: new { categoryName = @"[\w]+"}
             );
 
             routes.MapRoute(

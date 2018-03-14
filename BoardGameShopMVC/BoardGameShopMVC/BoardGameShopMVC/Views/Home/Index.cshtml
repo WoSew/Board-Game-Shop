@@ -10,7 +10,7 @@
         @foreach (var category in Model.Categories)
         {
             <li>
-                <a href="@Url.Action("List", "Store", new { categoryename = category.Name.ToLower() })" style="background-image: url(@Url.CategoryIconPath(category.IconFileName));">
+                <a href="@Url.Action("List", "Store", new { categoryName = category.Name.ToLower() })" style="background-image: url(@Url.CategoryIconPath(category.IconFileName));">
                     @category.Name
                 </a>
             </li>
