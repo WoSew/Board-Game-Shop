@@ -7,22 +7,23 @@
 <div id="productlist-content">
 
     @Html.Action("CategoriesMenu")
+     
+        <div id="productlist-rightsection">
+            <div id="breadcrumb-section">
+                <img src="@Url.Content("~/Content/Images/home-small.png")" />
+                @Html.MvcSiteMap().SiteMapPath()
 
-    <div id="productlist-rightsection">
-        <div id="breadcrumb-section">
-            <img src="@Url.Content("~/Content/Images/home-small.png")" />
-            @Html.MvcSiteMap().SiteMapPath()
+                <form id="search-form" method="get" data-ajax="true" data-ajax-target="#productlist-section">
+                    <input id="search-filter" type="search" name="searchQuery"
+                           data-autocomplete-source="@Url.Action("GamesSuggestions")" 
+                           placeholder="Filtruj..." />
+                    <input type="submit" value="" />
+                </form>
+            </div>
 
-            <form id="search-form">
-                <input id="search-filter" type="search" name="searchQuery"
-                       data-autocomplete-source="@Url.Action("GamesSuggestions")"
-                       placeholder="Filtruj..." />
-                <input type="submit" value="" />
-            </form>
-        </div>
 
         @Html.Partial("_ProductList")
-
+        
     </div>
 </div>
 
@@ -50,7 +51,31 @@
                     };
                 $input.autocomplete(options);
             }
-            $("#search-filter").each(setupAutoComplete);
         });
+
+        var ajaxSubmit = function () {
+
+            var $form = $(this);
+
+            var settings = {
+                data: $(this).serialize(),
+                url: $(this).attr("action"),
+                type: $(this).attr("method")
+            };
+
+            $.ajax(settings).done(function (result) {
+                var $targetElement = $($form.data("ajax-target"));
+                var $newContent = $(result);
+                $($targetElement).replaceWith($newContent);
+                $newContent.effect("slide");
+            });
+
+            return false;
+        };
+        
+        $("#search-filter").each(setupAutoComplete);
+        $("#search-form").submit(ajaxSubmit);
+
+
     </script>
 }

@@ -25,10 +25,18 @@ namespace BoardGameShopMVC.Controllers
             return View(game); 
         }
 
-        public ActionResult List(string categoryName)
+        public ActionResult List(string categoryName, string searchQuery = null)
         {
             var category = db.Categories.Include("Games").Where(x => x.Name.ToUpper() == categoryName.ToUpper()).Single();
-            var games = category.Games.ToList();
+
+            var games = category.Games.Where(x => (searchQuery == null ||
+                                                   x.GameTitle.ToLower().Contains(searchQuery.ToLower()) &&
+                                                   !x.IsHidder));
+
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_ProductList", games);
+            }
 
             return View(games);
         }
@@ -45,8 +53,7 @@ namespace BoardGameShopMVC.Controllers
 
         public ActionResult GamesSuggestions(string term)
         {
-            var games = this.db.Games.Where(x => !x.IsHidder && x.GameTitle.ToLower().Contains(term.ToLower())).Take(5)
-                .Select(x => new { label = x.GameTitle});
+            var games = this.db.Games.Where(a => a.GameTitle.ToLower().Contains(term.ToLower()) && !a.IsHidder).Take(5).Select(a => new { label = a.GameTitle });
 
             return Json(games, JsonRequestBehavior.AllowGet);
         }
