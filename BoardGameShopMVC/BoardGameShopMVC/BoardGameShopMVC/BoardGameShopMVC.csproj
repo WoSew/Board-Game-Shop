@@ -260,6 +260,9 @@
     <Compile Include="Infrastructure\DynamicNodeProviders\ProductDetailsDynamicNodeProvider.cs" />
     <Compile Include="Infrastructure\DynamicNodeProviders\ProductListDynamicNodeProvider.cs" />
     <Compile Include="Infrastructure\CacheProvider\ICacheProvider.cs" />
+    <Compile Include="Infrastructure\Session\ISessionManager.cs" />
+    <Compile Include="Infrastructure\Session\SessionManager.cs" />
+    <Compile Include="Infrastructure\ShoppingCartManager.cs" />
     <Compile Include="Infrastructure\UrlHelpers.cs" />
     <Compile Include="Migrations\201803062051326_InitialCreate.cs" />
     <Compile Include="Migrations\201803062051326_InitialCreate.Designer.cs">
@@ -274,6 +277,7 @@
       <DependentUpon>201803062133297_RemovedMigrationTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\Order.cs" />
