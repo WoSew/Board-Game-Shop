@@ -134,6 +134,5 @@ namespace BoardGameShopMVC.Infrastructure
         {
             _session.Set<List<CartItem>>(CartSessionKey, null);
         }
-
     }
 }
