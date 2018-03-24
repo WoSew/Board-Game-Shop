@@ -44,6 +44,24 @@ namespace BoardGameShopMVC.Controllers
             return shoppingCartManager.GetCartItemsCount();
         }
 
+        public ActionResult RemoveFromCart(int gameId)
+        {
+            int itemCount = shoppingCartManager.RemoveFromCart(gameId);
+            int cartItemsCount = shoppingCartManager.GetCartItemsCount();
+            decimal cartTotal = shoppingCartManager.GetCartTotalPrice();
+
+            //JSON to process in JS
+            var result = new CartRemoveViewModel
+            {
+                RemoveItemId = gameId,
+                RemovedItemCount = cartItemsCount,
+                CartTotal = cartTotal,
+                CartItemsCount = itemCount
+            };
+
+            return Json(result);
+        }
+
 
     }
 }
