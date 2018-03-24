@@ -115,6 +115,14 @@ a:hover, a:visited, a:link, a:active {
     margin-right: auto;
 }
 
+.hidden {
+    display: none;  
+}
+
+.invisible {
+    visibility: hidden;
+}
+
 #facebook-header {
     width: 260px;
     height: 42px;
@@ -258,7 +266,7 @@ nav.category-vertical {
     float: left;
     display: block;
     width: 100%;
-    height: 100%;
+    
 }
 
 #product-details-share {
@@ -390,7 +398,7 @@ ul.large-game-list-bottom li {
 }
 
     ul.large-game-list-bottom li a h1 {
-        bottom: 0px;
+        bottom: 0;
     }
 
 ul.large-game-list li {
@@ -588,6 +596,16 @@ div.section-header {
                 width: 70px;
                 text-align: center;
             }
+
+#cart-empty-message {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    visibility: hidden;
+}
+
 
 .section-button-container {
     overflow: hidden;

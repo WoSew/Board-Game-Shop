@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using BoardGameShopMVC.DAL;
 using BoardGameShopMVC.Infrastructure;
 using BoardGameShopMVC.Infrastructure.Session;
+using BoardGameShopMVC.ViewModels;
 
 namespace BoardGameShopMVC.Controllers
 {
@@ -24,12 +25,18 @@ namespace BoardGameShopMVC.Controllers
         // GET: Cart
         public ActionResult Index()
         {
-            return View();
+            var cartItem = shoppingCartManager.GetCart();
+            var cartTotalPrice = shoppingCartManager.GetCartTotalPrice();
+
+            CartViewModel cartVM = new CartViewModel() {CartItems = cartItem, TotalPrice = cartTotalPrice};
+
+            return View(cartVM);
         }
 
         public ActionResult AddToCart(int id)
         {
-            
+            shoppingCartManager.AddToCart(id);
+            return RedirectToAction("Index"); //after add to cart go to Indext action from this controller
         }
     }
 }

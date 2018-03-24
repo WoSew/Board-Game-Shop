@@ -14,24 +14,20 @@
     <div id="productlist-rightsection">
         <div id="breadcrumb-section">
             <img src="../Content/Images/home-small.png"/>
-            <a href="nav">
-                @Html.MvcSiteMap().SiteMap()
-            </a>
+                @Html.MvcSiteMap().SiteMapPath()
         </div>
 
         <section class="content-section">
             <div class="section-header" style="margin-bottom: 0px;">
                 <h1>Twój koszyk</h1>
             </div>
-
             <table id="cart-table">
                 @foreach (var cartItem in @Model.CartItems)
                 {
                     <tr id="cart-row-@cartItem.Game.GameID">
-                        
                         <td>
                             <a href="@Url.Action("Details", "Store", new {id = cartItem.Game.GameID})">
-                                <img src=@Url.GamePhotoPath(cartItem.Game.GameFileName)/>
+                                <img src="@Url.GamePhotoPath(cartItem.Game.GameFileName)"/>
                             </a>
                         </td>
                         <td><a href="@Url.Action("Details", "Store", new {id = cartItem.Game.GameID})">@cartItem.Game.GameTitle</a></td>
@@ -42,17 +38,17 @@
                     </tr>
                 }
                 
-                <tr id="cart-empty-message"> @if (Model.CartItems != null && Model.CartItems.Count > 0)
-                                             {
-                                                 <text> class="hidden" </text>
-                                             }
-                    <td>Twój koszyk jest pusty. Może być do niego wrzucił? ;)</td>
-
+                <tr id="cart-empty-message" 
+                    @if (Model.CartItems != null && Model.CartItems.Count > 0) 
+                    { 
+                        <text> class="hidden" </text>
+                    }>
+                    <td>Twój koszyk jest pusty. Może warto coś do niego dodać?</td>
                 </tr>
             </table>
 
             <div id="total-price" style="">
-                Razem: <span id ="total-price-valie">@string.Format("{0:0.##}", Model.TotalPrice)</span> zł 
+                Razem: <span id ="total-price-value">@string.Format("{0:0.##}", Model.TotalPrice)</span> zł 
              </div>
 
             <div class="section-button-container">
@@ -61,11 +57,8 @@
                 { 
                     <a class="button-link" id ="cart-button-checkout" href="@Url.Action("Checkout", "Cart")">Kupuję!</a>    
                 }
-                
             </div>
-
         </section>
-
     </div>
 </div>
 
