@@ -23,9 +23,9 @@
                 DOŁACZ DO 500 FANÓW NA FB
             </a>
 
-            <a id="cart-header-link" href="">
-                KOSZYK (0)
-                <span></span>
+            <a id="cart-header-link" href="@Url.Action("Index", "Cart")">
+                KOSZYK (@Html.Action("GetCartItemsCount", "Cart"))
+                <span id="cart-header-logo"></span>
             </a>
         </div>
         <a id="main-logo" href="@Url.Content("~/")">

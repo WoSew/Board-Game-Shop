@@ -147,7 +147,7 @@ a:hover, a:visited, a:link, a:active {
     text-align: center;
 }
 
-    #cart-header-link > span {
+    #cart-header-link > #cart-header-logo {
         width: 42px;
         height: 42px;
         background-color: #585858;

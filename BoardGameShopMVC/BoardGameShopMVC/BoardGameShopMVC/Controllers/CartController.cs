@@ -38,5 +38,12 @@ namespace BoardGameShopMVC.Controllers
             shoppingCartManager.AddToCart(id);
             return RedirectToAction("Index"); //after add to cart go to Indext action from this controller
         }
+
+        public int GetCartItemsCount()
+        {
+            return shoppingCartManager.GetCartItemsCount();
+        }
+
+
     }
 }
