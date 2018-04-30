@@ -116,7 +116,7 @@ a:hover, a:visited, a:link, a:active {
 }
 
 .hidden {
-    display: none;  
+    display: none;
 }
 
 .invisible {
@@ -261,13 +261,12 @@ nav.category-vertical {
     margin-right: 28px;
 }
 
-#product-details-left img {
-    height: 335px;
-    float: left;
-    display: block;
-    width: 100%;
-    
-}
+    #product-details-left img {
+        height: 335px;
+        float: left;
+        display: block;
+        width: 100%;
+    }
 
 #product-details-share {
     margin-top: 40px;
@@ -278,93 +277,93 @@ nav.category-vertical {
     width: 280px;
 }
 
-#product-details-share a {
-    margin-top: 30px;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 60px;
-    height: 60px;
-    float: left;
-}
+    #product-details-share a {
+        margin-top: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 60px;
+        height: 60px;
+        float: left;
+    }
 
-#product-details-share > div {
-    width: 1px;
-    height: 120px;
-    border-left: 1px solid #E5E5E5;
-    float: left;
-}
+    #product-details-share > div {
+        width: 1px;
+        height: 120px;
+        border-left: 1px solid #E5E5E5;
+        float: left;
+    }
 
-#product-details-share a:first-child {
-    margin-right: 50px;
-    background-image: url(../Content/Images/fb-share.png);
-}
+    #product-details-share a:first-child {
+        margin-right: 50px;
+        background-image: url(../Content/Images/fb-share.png);
+    }
 
-#product-details-share a:last-child {
-    margin-left: 50px;
-    background-image: url(../Content/Images/twitter-share.png);
-}
+    #product-details-share a:last-child {
+        margin-left: 50px;
+        background-image: url(../Content/Images/twitter-share.png);
+    }
 
 #product-details-right {
     float: left;
     width: 405px;
 }
 
-#product-details-right #product-details-names {
-    border: 5px solid #7C7C7C;
-}
+    #product-details-right #product-details-names {
+        border: 5px solid #7C7C7C;
+    }
 
-#product-details-right #product-details-names > h1 {
-    margin-top: 20px;
-    font-family: 'Segoe UI Light';
-    font-size: 38px;
-    text-transform: uppercase;
-    font-weight: normal;
-    color: #39312d;
-    text-align: center;
-}
+        #product-details-right #product-details-names > h1 {
+            margin-top: 20px;
+            font-family: 'Segoe UI Light';
+            font-size: 38px;
+            text-transform: uppercase;
+            font-weight: normal;
+            color: #39312d;
+            text-align: center;
+        }
 
-#product-details-right #product-details-names > h2 {
-    margin-top: 15px;
-    margin-bottom: 20px;
-    font-size: 20px;
-    font-family: 'Segoe UI Light';
-    text-transform: uppercase;
-    font-weight: normal;
-    color: #39312d;
-    text-align: center;
-}
+        #product-details-right #product-details-names > h2 {
+            margin-top: 15px;
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-family: 'Segoe UI Light';
+            text-transform: uppercase;
+            font-weight: normal;
+            color: #39312d;
+            text-align: center;
+        }
 
 #product-details-price {
     overflow: hidden;
 }
 
-#product-details-price > div {
-    float: left;
-    width: 332px;
-    height: 67px;
-    text-align: center;
-    background-color: #585858;
-    color: white;
-    font-size: 56px;
-    line-height: 56px;
-    font-weight: normal;
-}
+    #product-details-price > div {
+        float: left;
+        width: 332px;
+        height: 67px;
+        text-align: center;
+        background-color: #585858;
+        color: white;
+        font-size: 56px;
+        line-height: 56px;
+        font-weight: normal;
+    }
 
-#product-details-price > div > span {
-    font-size: 19px;
-    font-family: 'Segoe UI Light';
-    margin-left: 5px;
-}
+        #product-details-price > div > span {
+            font-size: 19px;
+            font-family: 'Segoe UI Light';
+            margin-left: 5px;
+        }
 
-#product-details-price > a {
-    float: left;
-    width: 73px;
-    height: 67px;
-    background-color: #39312E;
-    background-image: url(../Content/Images/cart-details.png);
-    background-repeat: no-repeat;
-    background-position: center center;
-}
+    #product-details-price > a {
+        float: left;
+        width: 73px;
+        height: 67px;
+        background-color: #39312E;
+        background-image: url(../Content/Images/cart-details.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
 
 #product-details-description {
     font-size: 18px;
@@ -643,6 +642,79 @@ div.section-header {
 a.button-link:visited, a.button-link:link, a.button-link:active {
     color: #dfdfdf;
 }
+
+
+#login-table {
+    margin-left: 20px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    border-style: none;
+}
+
+    #login-table tr {
+        height: 40px;
+    }
+
+        #login-table tr td {
+            vertical-align: middle;
+        }
+
+        #login-table tr:not(:nth-child(3)) td:first-child {
+            padding-right: 50px;
+            vertical-align: middle;
+        }
+
+        #login-table tr td:nth-child(2) {
+            vertical-align: middle;
+        }
+
+        #login-table tr td:nth-child(3) {
+            padding-left: 10px;
+            font-size: 15px;
+            color: red;
+        }
+
+        #login-table tr:nth-child(3) td {
+            text-align: right;
+            padding: 10px;
+        }
+
+    #login-table input {
+        border: 1px solid gray;
+        width: 250px;
+        height: 20px;
+        padding: 5px;
+    }
+
+        #login-table input[type=checkbox] {
+            width: 40px;
+        }
+
+    #login-table textarea {
+        width: 250px;
+        border: 1px solid gray;
+        padding: 5px;
+        margin-top: 5px;
+    }
+
+    #login-table .login-validation-message {
+        margin-bottom: 7px;
+        color: red !important;
+        font-size: 14px;
+    }
+
+    #login-table .text-danger {
+        text-decoration: none;
+    }
+
+#login-header div {
+    line-height: 40px;
+    padding-right: 15px;
+    color: #39312e;
+    font-size: 10pt;
+    float: right;
+}
+
 
 footer {
     width: 100%;

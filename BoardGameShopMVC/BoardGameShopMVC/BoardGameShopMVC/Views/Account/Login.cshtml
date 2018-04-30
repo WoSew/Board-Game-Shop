@@ -1,0 +1,59 @@
+﻿@model BoardGameShopMVC.ViewModels.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_RightSectionLayout.cshtml";
+}
+
+<div>
+    @using (@Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken() //to security form before login from other view
+
+        <div id="login-error">
+            @Html.ValidationMessage("loginerror", "")
+        </div>
+
+        <table id="login-table" style="margin-left: auto; margin-right: auto;">
+            <tr>
+                <td>@Html.LabelFor(x => x.Email, "E-mail:")</td>
+                <td>
+                    @Html.TextBoxFor(x => x.Email)
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(x => x.Email)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(x => x.Password, "Hasło")</td>
+                <td>
+                    @Html.PasswordFor(x => x.Password)
+                    <div class="login-validation-message">
+                        @Html.ValidationMessageFor(x => x.Password)
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <div class="checkbox" style="margin-bottom: 10px;">
+                        @Html.CheckBoxFor(m => m.RememberMe, new { @checked = "checked" })
+                        @Html.LabelFor(m => m.RememberMe)
+                    </div>
+
+                    <input type="submit" value="Zaloguj" class="submitLink" style=" height: 40px;" />
+                </td>
+            </tr>
+        </table>
+    }
+
+    <div style="text-align: center;">
+        <a href="@Url.Action("Register")">Nie mam jeszcze konta</a>
+    </div>
+</div>
+
+@section ScriptsBottom
+{
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+}
