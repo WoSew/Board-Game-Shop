@@ -27,6 +27,9 @@
                 KOSZYK (@Html.Action("GetCartItemsCount", "Cart"))
                 <span id="cart-header-logo"></span>
             </a>
+            
+            @Html.Partial("_LoginPartial");
+            
         </div>
         <a id="main-logo" href="@Url.Content("~/")">
             <img src="../../Content/Images/logo-main.png" class="center" />

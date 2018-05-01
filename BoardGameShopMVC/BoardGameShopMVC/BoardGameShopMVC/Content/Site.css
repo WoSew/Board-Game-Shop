@@ -643,6 +643,26 @@ a.button-link:visited, a.button-link:link, a.button-link:active {
     color: #dfdfdf;
 }
 
+#login-error {
+    color: red;
+    margin-top: 25px;
+    text-align: center;
+}
+
+
+#login-error .validation-summary-errors li {
+    list-style-type: none;
+    font-size: 14px;
+}
+
+.error-summary-centered{
+    text-align: center;
+}
+
+.error-summary-centered .validation-summary-errors li {
+    list-style-type: none;
+    font-size: 14px;
+}
 
 #login-table {
     margin-left: 20px;

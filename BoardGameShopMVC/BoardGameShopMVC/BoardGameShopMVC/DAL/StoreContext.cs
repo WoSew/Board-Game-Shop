@@ -1,9 +1,10 @@
 ﻿using System.Data.Entity;
 using BoardGameShopMVC.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace BoardGameShopMVC.DAL
 {
-    public class StoreContext : DbContext
+    public class StoreContext : IdentityDbContext<ApplicationUser>
     {
         public StoreContext() : base("StoreContext")
         {
@@ -13,6 +14,11 @@ namespace BoardGameShopMVC.DAL
         static StoreContext()
         {
             Database.SetInitializer(new StoreInitializer());
+        }
+
+        public static StoreContext Create()
+        {
+            return new StoreContext();
         }
         
         public DbSet<Game> Games { get; set; }
