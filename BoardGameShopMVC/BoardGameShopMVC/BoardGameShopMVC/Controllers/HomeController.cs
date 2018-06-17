@@ -48,5 +48,10 @@ namespace BoardGameShopMVC.Controllers
         {
             return View(viewname);
         }
+
+        public ActionResult TestFB()
+        {
+            return View();
+        }
     }
 }  

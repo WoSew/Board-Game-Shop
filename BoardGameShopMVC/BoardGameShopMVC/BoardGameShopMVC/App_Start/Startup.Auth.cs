@@ -8,6 +8,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
+using Microsoft.Owin.Security.Facebook;
 using Owin;
 
 namespace BoardGameShopMVC
@@ -58,15 +59,18 @@ namespace BoardGameShopMVC
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            var options = new FacebookAuthenticationOptions()
+            {
+                AppId = "2026420877619356",
+                AppSecret = "c0a6602ac77d50f00a18bbe35dca662d"
+            };
+            options.Scope.Add("email");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseFacebookAuthentication(options);
+
+            app.UseGoogleAuthentication(
+                clientId: "270167636461-u7ld3gn0b5beropjuaol2p2bpr0d57ba.apps.googleusercontent.com",
+                clientSecret: "YsQ2TZN9JxbDyJ9GfEk1oJeA");
         }
     }
 }

@@ -9,6 +9,7 @@ namespace BoardGameShopMVC.Models
         public string Description { get; set; }
         public string IconFileName { get; set; }
 
-        public virtual ICollection<Game> Games { get; set; }
+        //navigation property that let you show collection of games in specified category 
+        public virtual ICollection<Game> Games { get; set; } 
     }
 }

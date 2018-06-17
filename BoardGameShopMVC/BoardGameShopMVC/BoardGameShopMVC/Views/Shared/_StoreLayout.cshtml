@@ -1,4 +1,5 @@
 ﻿@using System.Web.Optimization
+@using WebGrease.Css
 
 @{
     Layout = null;
@@ -17,56 +18,59 @@
 
 </head>
 <body>
-    <header>
-        <div style="overflow: hidden;">
-            <a id="facebook-header" href="">
-                DOŁACZ DO 500 FANÓW NA FB
-            </a>
-
-            <a id="cart-header-link" href="@Url.Action("Index", "Cart")">
-                KOSZYK (@Html.Action("GetCartItemsCount", "Cart"))
-                <span id="cart-header-logo"></span>
-            </a>
-            
-            @Html.Partial("_LoginPartial");
-            
-        </div>
-        <a id="main-logo" href="@Url.Content("~/")">
-            <img src="../../Content/Images/logo-main.png" class="center" />
+<header>
+    <div style="overflow: hidden;">
+        <a id="facebook-header" href="@Url.Action("TestFB", "Home")">
+            DOŁACZ DO 500 FANÓW NA FB
         </a>
-    </header>
 
-    <div>
-        @RenderBody()   <!--to add content for currenty html view-->
+        <a id="cart-header-link" href="@Url.Action("Index", "Cart")">
+            KOSZYK (@Html.Action("GetCartItemsCount", "Cart"))
+            <span id="cart-header-logo"></span>
+        </a>
+            
+        @Html.Partial("_LoginPartial");
+            
+    </div>
+    <a id="main-logo" href="@Url.Content("~/")">
+        <img src="../../Content/Images/logo-main.png" class="center" />
+    </a>
+</header>
+
+<div>
+    @RenderBody()   <!--to add content for currenty html view-->
+</div>@Url.
+
+<footer>
+    <nav>
+        <ul>
+            <li>
+                <a href="@Url.Action("StaticContent", "Home", new {viewname = "Onas"})">O nas</a>
+            </li>
+            <li>
+                <a href="@Url.Action("StaticContent", "Home", new {viewname = "Kontakt"})">Kontakt</a>
+            </li>
+            <li>
+                <a href="@Url.Action("StaticContent", "Home", new {viewname = "Wysylka"})">Wysyłka</a>
+            </li>
+            <li>
+                <a href="@Url.Action("StaticContent", "Home", new {viewname = "Regulamin"})">Regulamin</a>
+            </li>
+            <li>
+                <a href="@Url.Action("StaticContent", "Home", new {viewname = "Test"})">Test</a>
+            </li>
+        </ul>
+    </nav>
+    <div id="footer-logo">
+        <img src="@Url.Content("~/Content/Images/footer-dice.png")" />
     </div>
 
-    <footer>
-        <nav>
-            <ul>
-                <li>
-                    <a href="@Url.Action("StaticContent", "Home", new {viewname = "Onas"})">O nas</a>
-                </li>
-                <li>
-                    <a href="@Url.Action("StaticContent", "Home", new {viewname = "Kontakt"})">Kontakt</a>
-                </li>
-                <li>
-                    <a href="@Url.Action("StaticContent", "Home", new {viewname = "Wysylka"})">Wysyłka</a>
-                </li>
-                <li>
-                    <a href="@Url.Action("StaticContent", "Home", new {viewname = "Regulamin"})">Regulamin</a>
-                </li>
-            </ul>
-        </nav>
-        <div id="footer-logo">
-            <img src="@Url.Content("~/Content/Images/footer-dice.png")" />
-        </div>
-
-        <div id="footer-copyright">
-            Copyright &copy; 2018 BoardGameShop
-        </div>
-    </footer>
+    <div id="footer-copyright">
+        Copyright &copy; 2018 BoardGameShop
+    </div>
+</footer>
     
-    @RenderSection("ScriptsBottom", required: false)  <!--to add js scripts-->
+@RenderSection("ScriptsBottom", required: false)  <!--to add js scripts-->
 
 </body>
 </html>
